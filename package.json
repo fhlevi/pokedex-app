@@ -15,10 +15,13 @@
     "@radix-ui/react-dialog": "^1.1.2",
     "@radix-ui/react-scroll-area": "^1.2.0",
     "@radix-ui/react-toast": "^1.2.2",
+    "@radix-ui/themes": "^3.1.6",
+    "axios": "^1.7.3",
     "clsx": "^2.1.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.52.2",
+    "react-query": "^3.39.3",
     "tailwind-merge": "^2.2.2",
     "uuid": "^10.0.0",
     "zod": "^3.23.8"

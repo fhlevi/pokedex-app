@@ -20,6 +20,7 @@ const config: Config = {
         'red-20': '#B07289',
         'red-30': '#FCEEF5',
         'red-40': '#571032',
+        'red-50': '#DC0A2D',
         midnight: '#444B55',
         'textfield-border': '#DEE3ED',
         ...mauve,

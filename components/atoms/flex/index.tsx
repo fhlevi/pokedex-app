@@ -4,7 +4,7 @@ import { z } from 'zod';
 const FlexSchema = z
   .object({
     children: z.any(),
-    direction: z.string(),
+    direction: z.enum(['col', 'row']),
     className: z.string(),
   })
   .partial({

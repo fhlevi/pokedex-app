@@ -1,12 +1,9 @@
 import { Button } from '@/components/atoms/button';
 import { Card } from '@/components/atoms/card';
 import { Container } from '@/components/atoms/container';
-import { Flex } from '@/components/atoms/flex';
-import { Label } from '@/components/atoms/label';
-import { ScrollArea } from '@/components/atoms/scroll-area';
 import { Toaster } from '@/components/molecules/toaster';
 import { TodoDialog } from '@/components/molecules/todo-dialog';
-import { TodoList } from '@/components/organisms/todo-list';
+import { PokodexList } from '@/components/organisms/pokodex-list';
 import { useDialogWithData } from '@/hooks/use-dialog-with-data';
 import { useToasterWithData } from '@/hooks/use-toaster';
 import { useTodo } from '@/hooks/use-todo';
@@ -56,32 +53,17 @@ function App() {
 
   return (
     <Container>
-      <Card className="rounded-2xl py-11 h-full px-6 text-white relative">
-        <Flex direction="col" className="h-full gap-7">
-          <Flex className="justify-between items-center">
-            <Label size="28px">To Do List</Label>
-            <Button
-              height="40px"
-              width="40px"
-              className="rounded-lg items-center flex justify-center"
-              onClick={addDialog.open}>
-              <em className="fa-solid fa-plus text-2xl"></em>
-            </Button>
-          </Flex>
+      <PokodexList />
 
-          <ScrollArea className="h-full overflow-y-auto">
-            <TodoList
-              items={todoList}
-              onUpdate={updateDialog.open}
-              onDelete={onTodoDelete}
-            />
-          </ScrollArea>
-        </Flex>
-      </Card>
-
-      <TodoDialog dialog={addDialog} onTodoSubmit={onTodoSubmit} />
-
-      <TodoDialog dialog={updateDialog} onTodoSubmit={onTodoUpdate} />
+      <TodoDialog 
+        dialog={addDialog} 
+        onTodoSubmit={onTodoSubmit} 
+      />
+      
+      <TodoDialog 
+        dialog={updateDialog} 
+        onTodoSubmit={onTodoUpdate} 
+      />
 
       <Toaster {...toaster} />
     </Container>
