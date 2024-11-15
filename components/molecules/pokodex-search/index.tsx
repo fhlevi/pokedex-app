@@ -1,15 +1,23 @@
 import { TextField } from '@radix-ui/themes';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { z } from 'zod';
 
-const PokodexSearchSchema = z.object({});
+const PokodexSearchSchema = z.object({
+  onSearch: z.function().args(z.string()),
+});
 
-const PokodexSearchPartial = PokodexSearchSchema.partial({});
+const PokodexSearchPartial = PokodexSearchSchema.partial({
+  onSearch: true,
+});
 
 type TPokodexSearch = z.infer<typeof PokodexSearchPartial>;
 
-export const PokodexSearch = ({}: TPokodexSearch) => {
+export const PokodexSearch = ({ onSearch }: TPokodexSearch) => {
   const [query, setQuery] = React.useState('');
+
+  useEffect(() => {
+    onSearch && onSearch(query);
+  }, [query]);
 
   return (
     <TextField.Root

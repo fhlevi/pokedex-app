@@ -23,7 +23,8 @@ export const Card = ({
   className,
   width = '100%',
   height = '100%',
-  variant = 'default'
+  variant = 'default',
+  ...props
 }: SchemaProps) => {
   const variants = {
     'default': 'bg-card',
@@ -36,7 +37,8 @@ export const Card = ({
       style={{
         height,
         width,
-      }}>
+      }}
+      {...props}>
       {children}
     </div>
   );
